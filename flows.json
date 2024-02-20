@@ -1,0 +1,1046 @@
+[
+    {
+        "id": "124e79f11bf166e6",
+        "type": "tab",
+        "label": "Ana Sayfa",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9bc579040821d229",
+        "type": "tab",
+        "label": "Form HTML",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "33ac8603d8c529a1",
+        "type": "tab",
+        "label": "Form Şema API",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f579461f4b884879",
+        "type": "tab",
+        "label": "Form Data API",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "36b672ad96efbab6",
+        "type": "tab",
+        "label": "Tablo",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8c15d4882a1415d7",
+        "type": "tab",
+        "label": "Tablo Şema",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7ef8b198cc85e2ec",
+        "type": "tab",
+        "label": "Tablo Data",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "133c1a0bac249104",
+        "type": "http in",
+        "z": "124e79f11bf166e6",
+        "name": "",
+        "url": "/",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "21797957275019f5"
+            ]
+        ]
+    },
+    {
+        "id": "21797957275019f5",
+        "type": "template",
+        "z": "124e79f11bf166e6",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<!doctype html>\n<html lang=\"tr\">\n\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Bootstrap demo</title>\n  <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\n    integrity=\"sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN\" crossorigin=\"anonymous\">\n  <link href=\"/css/dashboard.css\" rel=\"stylesheet\">\n  <script type=\"text/javascript\" src=\"https://unpkg.com/knockout/build/output/knockout-latest.js\"></script>\n\n  <link href=\"https://unpkg.com/survey-core/defaultV2.min.css\" type=\"text/css\" rel=\"stylesheet\">\n  <script src=\"https://unpkg.com/survey-core/survey.core.min.js\"></script>\n  <script src=\"https://unpkg.com/survey-knockout-ui/survey-knockout-ui.min.js\"></script>\n\n  <link href=\"https://unpkg.com/survey-creator-core/survey-creator-core.min.css\" type=\"text/css\" rel=\"stylesheet\">\n  <script src=\"https://unpkg.com/survey-creator-core/survey-creator-core.min.js\"></script>\n  <script src=\"https://unpkg.com/survey-creator-knockout/survey-creator-knockout.min.js\"></script>\n\n  <script src=\"https://code.jquery.com/jquery-3.7.1.min.js\"\n    integrity=\"sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=\" crossorigin=\"anonymous\"></script>\n  <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n\n  <!-- Default V2 theme -->\n  <link href=\"https://unpkg.com/survey-jquery/defaultV2.min.css\" type=\"text/css\" rel=\"stylesheet\">\n\n  <!-- Modern theme -->\n  <!-- <link href=\"https://unpkg.com/survey-jquery/modern.min.css\" type=\"text/css\" rel=\"stylesheet\"> -->\n\n  <script type=\"text/javascript\" src=\"https://unpkg.com/survey-jquery/survey.jquery.min.js\"></script>\n\n  <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n\n  <link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css\" />\n  <script src=\"https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js\"></script>\n\n  <script src=\"https://unpkg.com/mustache@latest\"></script>\n\n  <!-- <script type=\"text/javascript\" src=\"/js/helpers.js\"></script> -->\n  <!-- <script type=\"text/javascript\" src=\"/js/form-editor.js\"></script> -->\n  <!-- <script type=\"text/javascript\" src=\"/js/form.js\"></script> -->\n  <!-- <script type=\"text/javascript\" src=\"/js/table.js\"></script> -->\n  <script type=\"text/javascript\" src=\"/js/navigation.js\"></script>\n</head>\n\n<body>\n  <header class=\"navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow\">\n    <a class=\"navbar-brand col-md-3 col-lg-2 me-0 px-3\" href=\"#\">Form Uygulaması</a>\n    <button class=\"navbar-toggler position-absolute d-md-none collapsed\" type=\"button\" data-bs-toggle=\"collapse\"\n      data-bs-target=\"#sidebarMenu\" aria-controls=\"sidebarMenu\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"navbar-nav\">\n      <div class=\"nav-item text-nowrap\">\n        <!-- <a class=\"nav-link px-3\" href=\"#\">Sign out</a> -->\n      </div>\n    </div>\n  </header>\n\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <nav id=\"sidebarMenu\" class=\"col-md-3 col-lg-2 d-md-block bg-light sidebar collapse\">\n        <div class=\"position-sticky pt-3\">\n          <ul class=\"nav flex-column\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"#table?tableSchemaId=form-list\">Formlar</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"#table?tableSchemaId=table-list\">Tablolar</a>\n            </li>\n        </div>\n      </nav>\n\n      <main class=\"col-md-9 ms-sm-auto col-lg-10 px-md-4\">\n        <div\n          class=\"d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom\">\n          <h1 class=\"h2\">Dashboard</h1>\n          <div class=\"btn-toolbar mb-2 mb-md-0\">\n            <div class=\"btn-group me-2\">\n              <a href=\"#form?formSchemaId=form-options\" class=\"btn btn-sm btn-outline-secondary\">Form Ekle</a>\n              <a href=\"#form?formSchemaId=table-options\" class=\"btn btn-sm btn-outline-secondary\">Tablo Ekle</a>\n            </div>\n          </div>\n        </div>\n        <div id=\"contentContainer\"></div>\n      </main>\n    </div>\n  </div>\n  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js\"\n    integrity=\"sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL\"\n    crossorigin=\"anonymous\"></script>\n  <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js\"\n    integrity=\"sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r\"\n    crossorigin=\"anonymous\"></script>\n  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js\"\n    integrity=\"sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+\"\n    crossorigin=\"anonymous\"></script>\n</body>\n\n</html>",
+        "output": "str",
+        "x": 320,
+        "y": 140,
+        "wires": [
+            [
+                "71b4b2e40a90670f"
+            ]
+        ]
+    },
+    {
+        "id": "71b4b2e40a90670f",
+        "type": "http response",
+        "z": "124e79f11bf166e6",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 490,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "7278307af1143d13",
+        "type": "http in",
+        "z": "9bc579040821d229",
+        "name": "",
+        "url": "/form-editor",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "3223dfda8f109983"
+            ]
+        ]
+    },
+    {
+        "id": "3223dfda8f109983",
+        "type": "template",
+        "z": "9bc579040821d229",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Survey Creator for Knockout</title>\n    <meta charset=\"utf-8\">\n    <script type=\"text/javascript\" src=\"https://unpkg.com/knockout/build/output/knockout-latest.js\"></script>\n\n    <link  href=\"https://unpkg.com/survey-core/defaultV2.min.css\" type=\"text/css\" rel=\"stylesheet\">\n    <script src=\"https://unpkg.com/survey-core/survey.core.min.js\"></script>\n    <script src=\"https://unpkg.com/survey-knockout-ui/survey-knockout-ui.min.js\"></script>\n    \n    <link  href=\"https://unpkg.com/survey-creator-core/survey-creator-core.min.css\" type=\"text/css\" rel=\"stylesheet\">\n    <script src=\"https://unpkg.com/survey-creator-core/survey-creator-core.min.js\"></script>\n    <script src=\"https://unpkg.com/survey-creator-knockout/survey-creator-knockout.min.js\"></script>\n\n    <script src=\"https://code.jquery.com/jquery-3.7.1.min.js\" integrity=\"sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=\" crossorigin=\"anonymous\"></script>\n    <script type=\"text/javascript\" src=\"/js/helpers.js\"></script>\n    <script type=\"text/javascript\" src=\"/js/form-editor.js\"></script>\n</head>\n<body>\n    <div id=\"surveyCreator\" style=\"height: 100vh;\"></div>\n</body>\n</html>\n",
+        "output": "str",
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "3e1e1b66ad0d25ae"
+            ]
+        ]
+    },
+    {
+        "id": "3e1e1b66ad0d25ae",
+        "type": "http response",
+        "z": "9bc579040821d229",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 570,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "f40c16216502b42c",
+        "type": "http in",
+        "z": "9bc579040821d229",
+        "name": "",
+        "url": "/form",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "c60ec1c3b4a17e5c"
+            ]
+        ]
+    },
+    {
+        "id": "c60ec1c3b4a17e5c",
+        "type": "template",
+        "z": "9bc579040821d229",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html>\n<html>\n<head>\n    <title>My First Survey</title>\n    <meta charset=\"utf-8\">\n    <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n\n    <!-- Default V2 theme -->\n    <link href=\"https://unpkg.com/survey-jquery/defaultV2.min.css\" type=\"text/css\" rel=\"stylesheet\">\n\n    <!-- Modern theme -->\n    <!-- <link href=\"https://unpkg.com/survey-jquery/modern.min.css\" type=\"text/css\" rel=\"stylesheet\"> -->\n\n    <script type=\"text/javascript\" src=\"https://unpkg.com/survey-jquery/survey.jquery.min.js\"></script>\n    <script type=\"text/javascript\" src=\"/js/helpers.js\"></script>\n    <script type=\"text/javascript\" src=\"/js/form.js\"></script>\n</head>\n<body>\n    <div id=\"surveyContainer\"></div>\n</body>\n</html>\n",
+        "output": "str",
+        "x": 360,
+        "y": 260,
+        "wires": [
+            [
+                "5b97a3dc68cb743f"
+            ]
+        ]
+    },
+    {
+        "id": "5b97a3dc68cb743f",
+        "type": "http response",
+        "z": "9bc579040821d229",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 570,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "5df1c90c1d635018",
+        "type": "http in",
+        "z": "33ac8603d8c529a1",
+        "name": "",
+        "url": "/form-schema/:id",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "3ec7d8728aeb7025"
+            ]
+        ]
+    },
+    {
+        "id": "6c5f2cd08de66e5f",
+        "type": "http in",
+        "z": "33ac8603d8c529a1",
+        "name": "",
+        "url": "/form-schema",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "1771bb703dc8f1b8"
+            ]
+        ]
+    },
+    {
+        "id": "f0d5be8139e02a9b",
+        "type": "http response",
+        "z": "33ac8603d8c529a1",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 530,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "56c3804a65b7e74d",
+        "type": "http response",
+        "z": "33ac8603d8c529a1",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 550,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "3ec7d8728aeb7025",
+        "type": "function",
+        "z": "33ac8603d8c529a1",
+        "name": "function 1",
+        "func": "if([\"table-options\", \"form-options\"].includes(msg.req.params.id)) {\n    msg.filename = \"./storage/forms/\" + msg.req.params.id + \".json\"\n    return [null, msg]\n} \n\nmsg.payload = ((global.get(\"FORM\") || {})[msg.req.params.id] || {}).formSchema || {}\nreturn msg;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 120,
+        "wires": [
+            [
+                "f0d5be8139e02a9b"
+            ],
+            [
+                "33cd58ae379e081c"
+            ]
+        ]
+    },
+    {
+        "id": "1771bb703dc8f1b8",
+        "type": "function",
+        "z": "33ac8603d8c529a1",
+        "name": "function 2",
+        "func": "let { formSchemaId } = msg.payload\nlet id = formSchemaId ?? RED.util.generateId()\n\nlet dbData = global.get(\"FORM\") || {}\ndbData[id] = { ...(dbData[id] || {}), ...msg.payload, id }\n\nglobal.set(\"FORM\", dbData)\n\nmsg.payload = {\n    id\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 240,
+        "wires": [
+            [
+                "56c3804a65b7e74d"
+            ]
+        ]
+    },
+    {
+        "id": "33cd58ae379e081c",
+        "type": "file in",
+        "z": "33ac8603d8c529a1",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 540,
+        "y": 140,
+        "wires": [
+            [
+                "f8fd71512c7bf0b5"
+            ]
+        ]
+    },
+    {
+        "id": "92b0fd974522c802",
+        "type": "http response",
+        "z": "33ac8603d8c529a1",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 870,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f8fd71512c7bf0b5",
+        "type": "function",
+        "z": "33ac8603d8c529a1",
+        "name": "function 10",
+        "func": "msg.payload = JSON.parse(msg.payload).formSchema\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 140,
+        "wires": [
+            [
+                "92b0fd974522c802"
+            ]
+        ]
+    },
+    {
+        "id": "b6646584e10a1934",
+        "type": "http in",
+        "z": "33ac8603d8c529a1",
+        "name": "",
+        "url": "/form-options/:id",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 460,
+        "wires": [
+            [
+                "21400623c8cdde0d"
+            ]
+        ]
+    },
+    {
+        "id": "21400623c8cdde0d",
+        "type": "function",
+        "z": "33ac8603d8c529a1",
+        "name": "function 11",
+        "func": "if([\"table-options\", \"form-options\"].includes(msg.req.params.id)) {\n    msg.filename = \"./storage/forms/\" + msg.req.params.id + \".json\"\n    return [null, msg]\n} \n\nmsg.payload = ((global.get(\"FORM\") || {})[msg.req.params.id] || {}).formData || {}\nreturn msg;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 460,
+        "wires": [
+            [
+                "d843eccf13837be4"
+            ],
+            [
+                "58a2583f3adc6934"
+            ]
+        ]
+    },
+    {
+        "id": "d843eccf13837be4",
+        "type": "http response",
+        "z": "33ac8603d8c529a1",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 530,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "58a2583f3adc6934",
+        "type": "file in",
+        "z": "33ac8603d8c529a1",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 540,
+        "y": 480,
+        "wires": [
+            [
+                "3031ab31d2a16934"
+            ]
+        ]
+    },
+    {
+        "id": "3031ab31d2a16934",
+        "type": "function",
+        "z": "33ac8603d8c529a1",
+        "name": "function 12",
+        "func": "msg.payload = JSON.parse(msg.payload).formData\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 480,
+        "wires": [
+            [
+                "2060985cc36bdf97"
+            ]
+        ]
+    },
+    {
+        "id": "2060985cc36bdf97",
+        "type": "http response",
+        "z": "33ac8603d8c529a1",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 870,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "29ee48a602777141",
+        "type": "http in",
+        "z": "f579461f4b884879",
+        "name": "",
+        "url": "/form/:formSchemaId/:formDataId",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 230,
+        "y": 140,
+        "wires": [
+            [
+                "969ae89902a9a544"
+            ]
+        ]
+    },
+    {
+        "id": "d39b19a624578e5e",
+        "type": "http in",
+        "z": "f579461f4b884879",
+        "name": "",
+        "url": "/form",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "d9270e917e61f480"
+            ]
+        ]
+    },
+    {
+        "id": "eb8dd9222f4482c2",
+        "type": "http response",
+        "z": "f579461f4b884879",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1330,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7ee0fcfd5f6a3468",
+        "type": "http response",
+        "z": "f579461f4b884879",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1210,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "ddaa3e5ea4c0d680",
+        "type": "function",
+        "z": "f579461f4b884879",
+        "name": "function 3",
+        "func": "msg.payload = (global.get(msg.payload.collection) || {})[msg.req.params.formDataId] || {}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 120,
+        "wires": [
+            [
+                "eb8dd9222f4482c2"
+            ]
+        ]
+    },
+    {
+        "id": "71826c76ec21e3aa",
+        "type": "function",
+        "z": "f579461f4b884879",
+        "name": "function 4",
+        "func": "let { formDataId, formSchemaId } = msg._payload\nlet id = formDataId ?? RED.util.generateId()\n\nlet dbData = global.get(msg.payload.collection) || {}\ndbData[id] = { ...(dbData[id] || {}), ...msg._payload, id }\n\nglobal.set(msg.payload.collection, dbData)\n\nmsg.payload = {\n    id\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 240,
+        "wires": [
+            [
+                "7ee0fcfd5f6a3468"
+            ]
+        ]
+    },
+    {
+        "id": "7f8221bdeebfc76f",
+        "type": "http request",
+        "z": "f579461f4b884879",
+        "name": "http://127.0.0.1:1880/form-options/{{{payload.formSchemaId}}}",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:1880/form-options/{{{payload.formSchemaId}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 710,
+        "y": 240,
+        "wires": [
+            [
+                "71826c76ec21e3aa"
+            ]
+        ]
+    },
+    {
+        "id": "d9270e917e61f480",
+        "type": "change",
+        "z": "f579461f4b884879",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "_payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "7f8221bdeebfc76f"
+            ]
+        ]
+    },
+    {
+        "id": "3a589252c80c50b6",
+        "type": "http request",
+        "z": "f579461f4b884879",
+        "name": "http://127.0.0.1:1880/form-options/{{{req.params.formSchemaId}}}",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:1880/form-options/{{{req.params.formSchemaId}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 840,
+        "y": 120,
+        "wires": [
+            [
+                "ddaa3e5ea4c0d680"
+            ]
+        ]
+    },
+    {
+        "id": "969ae89902a9a544",
+        "type": "function",
+        "z": "f579461f4b884879",
+        "name": "function 17",
+        "func": "if([\"table-list\", \"form-list\"].includes(msg.req.params.formDataId)) {\n    msg.filename = \"./storage/tables/\" + msg.req.params.formDataId + \".json\"\n    return [null, msg]\n} \n\nreturn msg;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 140,
+        "wires": [
+            [
+                "3a589252c80c50b6"
+            ],
+            [
+                "b6aae604780ccb8a"
+            ]
+        ]
+    },
+    {
+        "id": "b6aae604780ccb8a",
+        "type": "file in",
+        "z": "f579461f4b884879",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 660,
+        "y": 160,
+        "wires": [
+            [
+                "baa190d913722d22"
+            ]
+        ]
+    },
+    {
+        "id": "baa190d913722d22",
+        "type": "function",
+        "z": "f579461f4b884879",
+        "name": "function 18",
+        "func": "msg.payload = JSON.parse(msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 160,
+        "wires": [
+            [
+                "82131901411f33b2"
+            ]
+        ]
+    },
+    {
+        "id": "82131901411f33b2",
+        "type": "http response",
+        "z": "f579461f4b884879",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 980,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "ae891ea0553a5a7c",
+        "type": "http in",
+        "z": "36b672ad96efbab6",
+        "name": "",
+        "url": "/table",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "0986f379a86dffc9"
+            ]
+        ]
+    },
+    {
+        "id": "0986f379a86dffc9",
+        "type": "template",
+        "z": "36b672ad96efbab6",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Datatable</title>\n    <meta charset=\"utf-8\">\n\n    <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n    \n    <link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css\" />\n    <script src=\"https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js\"></script>\n\n    <script src=\"https://unpkg.com/mustache@latest\"></script>\n    \n    <script type=\"text/javascript\" src=\"/js/helpers.js\"></script>\n    <script type=\"text/javascript\" src=\"/js/table.js\"></script>\n</head>\n<body>\n    <table id=\"datatableContainer\"></table>\n</body>\n</html>\n",
+        "output": "str",
+        "x": 340,
+        "y": 120,
+        "wires": [
+            [
+                "7449252b947e3eae"
+            ]
+        ]
+    },
+    {
+        "id": "7449252b947e3eae",
+        "type": "http response",
+        "z": "36b672ad96efbab6",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 550,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "2082165b3d772b87",
+        "type": "http in",
+        "z": "8c15d4882a1415d7",
+        "name": "",
+        "url": "/table-schema/:id",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 220,
+        "y": 160,
+        "wires": [
+            [
+                "49bdf2a632b58225"
+            ]
+        ]
+    },
+    {
+        "id": "8aa356afbd5d8687",
+        "type": "http response",
+        "z": "8c15d4882a1415d7",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 610,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "49bdf2a632b58225",
+        "type": "function",
+        "z": "8c15d4882a1415d7",
+        "name": "function 8",
+        "func": "if([\"table-list\", \"form-list\"].includes(msg.req.params.id)) {\n    msg.filename = \"./storage/tables/\" + msg.req.params.id + \".json\"\n    return [null, msg]\n} \n\nmsg.payload = (((global.get(\"TABLE\") || {})[msg.req.params.id] || {}).formData || {}).columns || []\n\n// [\n//     { searchable: false, orderable: true, data: \"name\", title: \"name\", name: \"name\" },\n//     { searchable: true, orderable: false, data: \"position\", title: \"position\", name: \"position\" },\n//     { searchable: true, orderable: false, data: \"salary\", title: \"salary\", name: \"salary\"},\n//     { searchable: false, orderable: true, data: \"office\", title: \"office\", name: \"office\" }\n// ]\nreturn msg;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "8aa356afbd5d8687"
+            ],
+            [
+                "b34e43c6d5db1bdb"
+            ]
+        ]
+    },
+    {
+        "id": "94f7e16d5c7c1cba",
+        "type": "function",
+        "z": "8c15d4882a1415d7",
+        "name": "function 13",
+        "func": "if ([\"table-list\", \"form-list\"].includes(msg.req.params.id)) {\n    msg.filename = \"./storage/tables/\" + msg.req.params.id + \".json\"\n    return [null, msg]\n} \n\nmsg.payload = ((global.get(\"TABLE\") || {})[msg.req.params.id] || {}).formData || {}\n\n// [\n//     { searchable: false, orderable: true, data: \"name\", title: \"name\", name: \"name\" },\n//     { searchable: true, orderable: false, data: \"position\", title: \"position\", name: \"position\" },\n//     { searchable: true, orderable: false, data: \"salary\", title: \"salary\", name: \"salary\"},\n//     { searchable: false, orderable: true, data: \"office\", title: \"office\", name: \"office\" }\n// ]\nreturn msg;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 340,
+        "wires": [
+            [
+                "6299222a1f85ddb5"
+            ],
+            [
+                "508a2725f3cf69f9"
+            ]
+        ]
+    },
+    {
+        "id": "0c97896deb2ada8b",
+        "type": "http in",
+        "z": "8c15d4882a1415d7",
+        "name": "",
+        "url": "/table-options/:id",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 230,
+        "y": 340,
+        "wires": [
+            [
+                "94f7e16d5c7c1cba"
+            ]
+        ]
+    },
+    {
+        "id": "6299222a1f85ddb5",
+        "type": "http response",
+        "z": "8c15d4882a1415d7",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 610,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "b34e43c6d5db1bdb",
+        "type": "file in",
+        "z": "8c15d4882a1415d7",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 620,
+        "y": 180,
+        "wires": [
+            [
+                "56d3c6a8949dc315"
+            ]
+        ]
+    },
+    {
+        "id": "56d3c6a8949dc315",
+        "type": "function",
+        "z": "8c15d4882a1415d7",
+        "name": "function 15",
+        "func": "msg.payload = JSON.parse(msg.payload).formData.columns\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 180,
+        "wires": [
+            [
+                "9b7bedb68016cd74"
+            ]
+        ]
+    },
+    {
+        "id": "9b7bedb68016cd74",
+        "type": "http response",
+        "z": "8c15d4882a1415d7",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 950,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "508a2725f3cf69f9",
+        "type": "file in",
+        "z": "8c15d4882a1415d7",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 620,
+        "y": 360,
+        "wires": [
+            [
+                "852266aa789b4feb"
+            ]
+        ]
+    },
+    {
+        "id": "852266aa789b4feb",
+        "type": "function",
+        "z": "8c15d4882a1415d7",
+        "name": "function 16",
+        "func": "msg.payload = JSON.parse(msg.payload).formData\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 360,
+        "wires": [
+            [
+                "d1ba8fd3277e233c"
+            ]
+        ]
+    },
+    {
+        "id": "d1ba8fd3277e233c",
+        "type": "http response",
+        "z": "8c15d4882a1415d7",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 950,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e268a74351eb3674",
+        "type": "http in",
+        "z": "7ef8b198cc85e2ec",
+        "name": "",
+        "url": "/table/:tableSchemaId",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "1d85ca4db28ff9ea"
+            ]
+        ]
+    },
+    {
+        "id": "ae25c962456f23a2",
+        "type": "http response",
+        "z": "7ef8b198cc85e2ec",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1350,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f716d3d643799d83",
+        "type": "function",
+        "z": "7ef8b198cc85e2ec",
+        "name": "function 7",
+        "func": "let data = Object.values(global.get(msg.payload.collection) || {})\n\nconst { draw } = msg._payload\nmsg.payload = {\n    draw,\n    recordsTotal: data.length,\n    recordsFiltered: data.length,\n    data: data\n    \n    // [\n    //     {\n    //         \"name\": \"Tiger Nixon\",\n    //         \"position\": \"System Architect\",\n    //         \"salary\": \"$3,120\",\n    //         \"start_date\": \"2011/04/25\",\n    //         \"office\": \"Edinburgh\",\n    //         \"extn\": \"5421\"\n    //     },\n    //     {\n    //         \"name\": \"Garrett Winters\",\n    //         \"position\": \"Director\",\n    //         \"salary\": \"$5,300\",\n    //         \"start_date\": \"2011/07/25\",\n    //         \"office\": \"Edinburgh\",\n    //         \"extn\": \"8422\"\n    //     }\n    // ]\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1180,
+        "y": 140,
+        "wires": [
+            [
+                "ae25c962456f23a2"
+            ]
+        ]
+    },
+    {
+        "id": "1d85ca4db28ff9ea",
+        "type": "change",
+        "z": "7ef8b198cc85e2ec",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "_payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 140,
+        "wires": [
+            [
+                "a275600f1023ed0d"
+            ]
+        ]
+    },
+    {
+        "id": "a275600f1023ed0d",
+        "type": "http request",
+        "z": "7ef8b198cc85e2ec",
+        "name": "http://127.0.0.1:1880/table-options/{{{req.params.tableSchemaId}}}",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:1880/table-options/{{{req.params.tableSchemaId}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 840,
+        "y": 140,
+        "wires": [
+            [
+                "f716d3d643799d83"
+            ]
+        ]
+    }
+]

@@ -1,0 +1,28 @@
+{
+    "formData": {
+        "collection": "FORM"
+    },
+    "formSchemaId": "form-options",
+    "formSchema": {
+        "pages": [
+            {
+                "name": "page1",
+                "elements": [
+                    {
+                        "type": "text",
+                        "name": "collection",
+                        "title": "collection",
+                        "isRequired": true
+                    },
+                    {
+                        "type": "text",
+                        "name": "name",
+                        "title": "name",
+                        "isRequired": true
+                    }
+                ]
+            }
+        ],
+        "showQuestionNumbers": "off"
+    }
+}

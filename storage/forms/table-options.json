@@ -1,0 +1,81 @@
+{
+    "formData": {
+        "collection": "TABLE"
+    },
+    "formSchemaId": "table-options",
+    "formSchema": {
+        "pages": [
+            {
+                "name": "page1",
+                "elements": [
+                    {
+                        "type": "text",
+                        "name": "collection",
+                        "title": "collection",
+                        "isRequired": true
+                    },
+                    {
+                        "type": "text",
+                        "name": "name",
+                        "title": "name",
+                        "isRequired": true
+                    },
+                    {
+                        "type": "paneldynamic",
+                        "name": "columns",
+                        "title": "columns",
+                        "isRequired": true,
+                        "templateElements": [
+                            {
+                                "type": "text",
+                                "name": "data",
+                                "title": "data",
+                                "isRequired": true
+                            },
+                            {
+                                "type": "text",
+                                "name": "title",
+                                "title": "title",
+                                "isRequired": true
+                            },
+                            {
+                                "type": "text",
+                                "name": "name",
+                                "title": "name",
+                                "isRequired": true
+                            },
+                            {
+                                "type": "boolean",
+                                "name": "visible",
+                                "title": "visible",
+                                "defaultValue": "true",
+                                "isRequired": true
+                            },
+                            {
+                                "type": "boolean",
+                                "name": "orderable",
+                                "title": "orderable",
+                                "defaultValue": "true",
+                                "isRequired": true
+                            },
+                            {
+                                "type": "boolean",
+                                "name": "searchable",
+                                "title": "searchable",
+                                "defaultValue": "true",
+                                "isRequired": true
+                            },
+                            {
+                                "type": "comment",
+                                "name": "template",
+                                "title": "template",
+                                "isRequired": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "showQuestionNumbers": "off"
+    }
+}

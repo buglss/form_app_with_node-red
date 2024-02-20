@@ -1,0 +1,44 @@
+{
+    "id": "table-list",
+    "formData": {
+        "collection": "TABLE",
+        "columns": [
+            {
+                "visible": true,
+                "orderable": true,
+                "searchable": true,
+                "data": "id",
+                "title": "id",
+                "name": "id"
+            },
+            {
+                "visible": true,
+                "orderable": true,
+                "searchable": true,
+                "data": "formData.collection",
+                "title": "collection",
+                "name": "collection"
+            },
+            {
+                "visible": true,
+                "orderable": true,
+                "searchable": true,
+                "data": "formData.name",
+                "title": "name",
+                "name": "name"
+            },
+            {
+                "visible": true,
+                "orderable": false,
+                "searchable": false,
+                "data": "null",
+                "title": "null",
+                "name": "null",
+                "template": "<a href=\"#form?formSchemaId=table-options&formDataId={{id}}\" class=\"btn btn-sm btn-outline-secondary\">Düzenle</a>"
+            }
+        ],
+        "name": "Tablo Listesi"
+    },
+    "formSchemaId": "table-options",
+    "formDataId": "table-list"
+}

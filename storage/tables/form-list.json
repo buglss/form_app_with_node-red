@@ -1,0 +1,44 @@
+{
+    "id": "form-list",
+    "formData": {
+        "collection": "FORM",
+        "columns": [
+            {
+                "visible": true,
+                "orderable": true,
+                "searchable": true,
+                "data": "id",
+                "title": "id",
+                "name": "id"
+            },
+            {
+                "visible": true,
+                "orderable": true,
+                "searchable": true,
+                "data": "formData.collection",
+                "title": "collection",
+                "name": "collection"
+            },
+            {
+                "visible": true,
+                "orderable": true,
+                "searchable": true,
+                "data": "formData.name",
+                "title": "name",
+                "name": "name"
+            },
+            {
+                "visible": true,
+                "orderable": false,
+                "searchable": false,
+                "data": "null",
+                "title": "null",
+                "name": "null",
+                "template": "<a href=\"#form-editor?formSchemaId={{id}}\" class=\"btn btn-sm btn-outline-secondary\">Şema Düzenle</a>\n<a href=\"#form?formSchemaId=form-options&formDataId={{id}}\" class=\"btn btn-sm btn-outline-secondary\">Ayar Düzenle</a>"
+            }
+        ],
+        "name": "Form Listesi"
+    },
+    "formSchemaId": "table-options",
+    "formDataId": "form-list"
+}
