@@ -34,7 +34,7 @@
     {
         "id": "36b672ad96efbab6",
         "type": "tab",
-        "label": "Tablo",
+        "label": "Tablo HTML",
         "disabled": false,
         "info": "",
         "env": []
@@ -42,7 +42,7 @@
     {
         "id": "8c15d4882a1415d7",
         "type": "tab",
-        "label": "Tablo Şema",
+        "label": "Tablo Şema API",
         "disabled": false,
         "info": "",
         "env": []
@@ -50,7 +50,7 @@
     {
         "id": "7ef8b198cc85e2ec",
         "type": "tab",
-        "label": "Tablo Data",
+        "label": "Tablo Data API",
         "disabled": false,
         "info": "",
         "env": []
@@ -81,7 +81,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<!doctype html>\n<html lang=\"tr\">\n\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Bootstrap demo</title>\n  <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\n    integrity=\"sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN\" crossorigin=\"anonymous\">\n  <link href=\"/css/dashboard.css\" rel=\"stylesheet\">\n  <script type=\"text/javascript\" src=\"https://unpkg.com/knockout/build/output/knockout-latest.js\"></script>\n\n  <link href=\"https://unpkg.com/survey-core/defaultV2.min.css\" type=\"text/css\" rel=\"stylesheet\">\n  <script src=\"https://unpkg.com/survey-core/survey.core.min.js\"></script>\n  <script src=\"https://unpkg.com/survey-knockout-ui/survey-knockout-ui.min.js\"></script>\n\n  <link href=\"https://unpkg.com/survey-creator-core/survey-creator-core.min.css\" type=\"text/css\" rel=\"stylesheet\">\n  <script src=\"https://unpkg.com/survey-creator-core/survey-creator-core.min.js\"></script>\n  <script src=\"https://unpkg.com/survey-creator-knockout/survey-creator-knockout.min.js\"></script>\n\n  <script src=\"https://code.jquery.com/jquery-3.7.1.min.js\"\n    integrity=\"sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=\" crossorigin=\"anonymous\"></script>\n  <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n\n  <!-- Default V2 theme -->\n  <link href=\"https://unpkg.com/survey-jquery/defaultV2.min.css\" type=\"text/css\" rel=\"stylesheet\">\n\n  <!-- Modern theme -->\n  <!-- <link href=\"https://unpkg.com/survey-jquery/modern.min.css\" type=\"text/css\" rel=\"stylesheet\"> -->\n\n  <script type=\"text/javascript\" src=\"https://unpkg.com/survey-jquery/survey.jquery.min.js\"></script>\n\n  <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n\n  <link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css\" />\n  <script src=\"https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js\"></script>\n\n  <script src=\"https://unpkg.com/mustache@latest\"></script>\n\n  <!-- <script type=\"text/javascript\" src=\"/js/helpers.js\"></script> -->\n  <!-- <script type=\"text/javascript\" src=\"/js/form-editor.js\"></script> -->\n  <!-- <script type=\"text/javascript\" src=\"/js/form.js\"></script> -->\n  <!-- <script type=\"text/javascript\" src=\"/js/table.js\"></script> -->\n  <script type=\"text/javascript\" src=\"/js/navigation.js\"></script>\n</head>\n\n<body>\n  <header class=\"navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow\">\n    <a class=\"navbar-brand col-md-3 col-lg-2 me-0 px-3\" href=\"#\">Form Uygulaması</a>\n    <button class=\"navbar-toggler position-absolute d-md-none collapsed\" type=\"button\" data-bs-toggle=\"collapse\"\n      data-bs-target=\"#sidebarMenu\" aria-controls=\"sidebarMenu\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"navbar-nav\">\n      <div class=\"nav-item text-nowrap\">\n        <!-- <a class=\"nav-link px-3\" href=\"#\">Sign out</a> -->\n      </div>\n    </div>\n  </header>\n\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <nav id=\"sidebarMenu\" class=\"col-md-3 col-lg-2 d-md-block bg-light sidebar collapse\">\n        <div class=\"position-sticky pt-3\">\n          <ul class=\"nav flex-column\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"#table?tableSchemaId=form-list\">Formlar</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"#table?tableSchemaId=table-list\">Tablolar</a>\n            </li>\n        </div>\n      </nav>\n\n      <main class=\"col-md-9 ms-sm-auto col-lg-10 px-md-4\">\n        <div\n          class=\"d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom\">\n          <h1 class=\"h2\">Dashboard</h1>\n          <div class=\"btn-toolbar mb-2 mb-md-0\">\n            <div class=\"btn-group me-2\">\n              <a href=\"#form?formSchemaId=form-options\" class=\"btn btn-sm btn-outline-secondary\">Form Ekle</a>\n              <a href=\"#form?formSchemaId=table-options\" class=\"btn btn-sm btn-outline-secondary\">Tablo Ekle</a>\n            </div>\n          </div>\n        </div>\n        <div id=\"contentContainer\"></div>\n      </main>\n    </div>\n  </div>\n  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js\"\n    integrity=\"sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL\"\n    crossorigin=\"anonymous\"></script>\n  <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js\"\n    integrity=\"sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r\"\n    crossorigin=\"anonymous\"></script>\n  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js\"\n    integrity=\"sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+\"\n    crossorigin=\"anonymous\"></script>\n</body>\n\n</html>",
+        "template": "<!doctype html>\n<html lang=\"tr\">\n\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Dashboard</title>\n  <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\n    integrity=\"sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN\" crossorigin=\"anonymous\">\n  <link href=\"/css/dashboard.css\" rel=\"stylesheet\">\n  <script type=\"text/javascript\" src=\"https://unpkg.com/knockout/build/output/knockout-latest.js\"></script>\n\n  <link href=\"https://unpkg.com/survey-core/defaultV2.min.css\" type=\"text/css\" rel=\"stylesheet\">\n  <script src=\"https://unpkg.com/survey-core/survey.core.min.js\"></script>\n  <script src=\"https://unpkg.com/survey-knockout-ui/survey-knockout-ui.min.js\"></script>\n\n  <link href=\"https://unpkg.com/survey-creator-core/survey-creator-core.min.css\" type=\"text/css\" rel=\"stylesheet\">\n  <script src=\"https://unpkg.com/survey-creator-core/survey-creator-core.min.js\"></script>\n  <script src=\"https://unpkg.com/survey-creator-knockout/survey-creator-knockout.min.js\"></script>\n\n  <script src=\"https://code.jquery.com/jquery-3.7.1.min.js\"\n    integrity=\"sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=\" crossorigin=\"anonymous\"></script>\n  <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n\n  <!-- Default V2 theme -->\n  <link href=\"https://unpkg.com/survey-jquery/defaultV2.min.css\" type=\"text/css\" rel=\"stylesheet\">\n\n  <script type=\"text/javascript\" src=\"https://unpkg.com/survey-jquery/survey.jquery.min.js\"></script>\n\n  <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n\n  <link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css\" />\n  <script src=\"https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js\"></script>\n\n  <script src=\"https://unpkg.com/mustache@latest\"></script>\n\n  <script type=\"text/javascript\" src=\"/js/navigation.js\"></script>\n</head>\n\n<body>\n  <header class=\"navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow\">\n    <a class=\"navbar-brand col-md-3 col-lg-2 me-0 px-3\" href=\"#\">Form Uygulaması</a>\n    <button class=\"navbar-toggler position-absolute d-md-none collapsed\" type=\"button\" data-bs-toggle=\"collapse\"\n      data-bs-target=\"#sidebarMenu\" aria-controls=\"sidebarMenu\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"navbar-nav\">\n      <div class=\"nav-item text-nowrap\">\n        <!-- <a class=\"nav-link px-3\" href=\"#\">Sign out</a> -->\n      </div>\n    </div>\n  </header>\n\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <nav id=\"sidebarMenu\" class=\"col-md-3 col-lg-2 d-md-block bg-light sidebar collapse\">\n        <div class=\"position-sticky pt-3\">\n          <ul class=\"nav flex-column\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"#table?tableSchemaId=form-list\">Formlar</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"#table?tableSchemaId=table-list\">Tablolar</a>\n            </li>\n        </div>\n      </nav>\n\n      <main class=\"col-md-9 ms-sm-auto col-lg-10 px-md-4\">\n        <div\n          class=\"d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom\">\n          <h1 class=\"h2\" id=\"contentTitle\">Dashboard</h1>\n          <div class=\"btn-toolbar mb-2 mb-md-0\">\n            <div class=\"btn-group me-2\">\n              <a href=\"#form?formSchemaId=form-options\" class=\"btn btn-sm btn-outline-secondary\">Form Ekle</a>\n              <a href=\"#form?formSchemaId=table-options\" class=\"btn btn-sm btn-outline-secondary\">Tablo Ekle</a>\n            </div>\n          </div>\n        </div>\n        <div id=\"contentContainer\"></div>\n      </main>\n    </div>\n  </div>\n  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js\"\n    integrity=\"sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL\"\n    crossorigin=\"anonymous\"></script>\n  <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js\"\n    integrity=\"sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r\"\n    crossorigin=\"anonymous\"></script>\n  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js\"\n    integrity=\"sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+\"\n    crossorigin=\"anonymous\"></script>\n</body>\n\n</html>",
         "output": "str",
         "x": 320,
         "y": 140,
@@ -201,11 +201,11 @@
         "type": "http in",
         "z": "33ac8603d8c529a1",
         "name": "",
-        "url": "/form-schema/:id",
+        "url": "/form-schema/:formSchemaId",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 160,
+        "x": 200,
         "y": 120,
         "wires": [
             [
@@ -237,7 +237,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 530,
+        "x": 610,
         "y": 100,
         "wires": []
     },
@@ -257,14 +257,14 @@
         "type": "function",
         "z": "33ac8603d8c529a1",
         "name": "function 1",
-        "func": "if([\"table-options\", \"form-options\"].includes(msg.req.params.id)) {\n    msg.filename = \"./storage/forms/\" + msg.req.params.id + \".json\"\n    return [null, msg]\n} \n\nmsg.payload = ((global.get(\"FORM\") || {})[msg.req.params.id] || {}).formSchema || {}\nreturn msg;",
+        "func": "if([\"table-options\", \"form-options\"].includes(msg.req.params.formSchemaId)) {\n    msg.filename = \"./storage/forms/\" + msg.req.params.formSchemaId + \".json\"\n    return [null, msg]\n} \n\nmsg.payload = ((global.get(\"FORM\") || {})[msg.req.params.formSchemaId] || {}).formSchema || {}\nreturn msg;",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
+        "x": 460,
         "y": 120,
         "wires": [
             [
@@ -307,7 +307,7 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 540,
+        "x": 620,
         "y": 140,
         "wires": [
             [
@@ -322,7 +322,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 870,
+        "x": 950,
         "y": 140,
         "wires": []
     },
@@ -338,7 +338,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
+        "x": 790,
         "y": 140,
         "wires": [
             [
@@ -351,12 +351,12 @@
         "type": "http in",
         "z": "33ac8603d8c529a1",
         "name": "",
-        "url": "/form-options/:id",
+        "url": "/form-options/:formSchemaId",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 160,
-        "y": 460,
+        "x": 200,
+        "y": 360,
         "wires": [
             [
                 "21400623c8cdde0d"
@@ -368,15 +368,15 @@
         "type": "function",
         "z": "33ac8603d8c529a1",
         "name": "function 11",
-        "func": "if([\"table-options\", \"form-options\"].includes(msg.req.params.id)) {\n    msg.filename = \"./storage/forms/\" + msg.req.params.id + \".json\"\n    return [null, msg]\n} \n\nmsg.payload = ((global.get(\"FORM\") || {})[msg.req.params.id] || {}).formData || {}\nreturn msg;",
+        "func": "if ([\"table-options\", \"form-options\"].includes(msg.req.params.formSchemaId)) {\n    msg.filename = \"./storage/forms/\" + msg.req.params.formSchemaId + \".json\"\n    return [null, msg]\n} \n\nmsg.payload = ((global.get(\"FORM\") || {})[msg.req.params.formSchemaId] || {}).formData || {}\nreturn msg;",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 460,
+        "x": 470,
+        "y": 360,
         "wires": [
             [
                 "d843eccf13837be4"
@@ -393,8 +393,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 530,
-        "y": 440,
+        "x": 620,
+        "y": 340,
         "wires": []
     },
     {
@@ -409,8 +409,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 540,
-        "y": 480,
+        "x": 630,
+        "y": 380,
         "wires": [
             [
                 "3031ab31d2a16934"
@@ -429,8 +429,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
-        "y": 480,
+        "x": 800,
+        "y": 380,
         "wires": [
             [
                 "2060985cc36bdf97"
@@ -444,8 +444,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 870,
-        "y": 480,
+        "x": 960,
+        "y": 380,
         "wires": []
     },
     {
@@ -694,6 +694,54 @@
         "wires": []
     },
     {
+        "id": "e5e9f7174923e3cc",
+        "type": "http in",
+        "z": "f579461f4b884879",
+        "name": "",
+        "url": "/form/:formSchemaId",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 200,
+        "y": 340,
+        "wires": [
+            [
+                "846bb2e4c434727d"
+            ]
+        ]
+    },
+    {
+        "id": "846bb2e4c434727d",
+        "type": "function",
+        "z": "f579461f4b884879",
+        "name": "function 19",
+        "func": "let id = msg.req.params.formSchemaId\n\nlet dbData = global.get(\"FORM\") || {}\ndelete dbData[id]\nglobal.set(\"FORM\", dbData)\n\nmsg.payload = {}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 340,
+        "wires": [
+            [
+                "131a647e7126a52f"
+            ]
+        ]
+    },
+    {
+        "id": "131a647e7126a52f",
+        "type": "http response",
+        "z": "f579461f4b884879",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 590,
+        "y": 340,
+        "wires": []
+    },
+    {
         "id": "ae891ea0553a5a7c",
         "type": "http in",
         "z": "36b672ad96efbab6",
@@ -745,11 +793,11 @@
         "type": "http in",
         "z": "8c15d4882a1415d7",
         "name": "",
-        "url": "/table-schema/:id",
+        "url": "/table-schema/:tableSchemaId",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 220,
+        "x": 260,
         "y": 160,
         "wires": [
             [
@@ -764,7 +812,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 610,
+        "x": 690,
         "y": 140,
         "wires": []
     },
@@ -773,14 +821,14 @@
         "type": "function",
         "z": "8c15d4882a1415d7",
         "name": "function 8",
-        "func": "if([\"table-list\", \"form-list\"].includes(msg.req.params.id)) {\n    msg.filename = \"./storage/tables/\" + msg.req.params.id + \".json\"\n    return [null, msg]\n} \n\nmsg.payload = (((global.get(\"TABLE\") || {})[msg.req.params.id] || {}).formData || {}).columns || []\n\n// [\n//     { searchable: false, orderable: true, data: \"name\", title: \"name\", name: \"name\" },\n//     { searchable: true, orderable: false, data: \"position\", title: \"position\", name: \"position\" },\n//     { searchable: true, orderable: false, data: \"salary\", title: \"salary\", name: \"salary\"},\n//     { searchable: false, orderable: true, data: \"office\", title: \"office\", name: \"office\" }\n// ]\nreturn msg;",
+        "func": "if([\"table-list\", \"form-list\"].includes(msg.req.params.tableSchemaId)) {\n    msg.filename = \"./storage/tables/\" + msg.req.params.tableSchemaId + \".json\"\n    return [null, msg]\n} \n\nmsg.payload = (((global.get(\"TABLE\") || {})[msg.req.params.tableSchemaId] || {}).formData || {}).columns || []\n\n// [\n//     { searchable: false, orderable: true, data: \"name\", title: \"name\", name: \"name\" },\n//     { searchable: true, orderable: false, data: \"position\", title: \"position\", name: \"position\" },\n//     { searchable: true, orderable: false, data: \"salary\", title: \"salary\", name: \"salary\"},\n//     { searchable: false, orderable: true, data: \"office\", title: \"office\", name: \"office\" }\n// ]\nreturn msg;",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 440,
+        "x": 520,
         "y": 160,
         "wires": [
             [
@@ -796,14 +844,14 @@
         "type": "function",
         "z": "8c15d4882a1415d7",
         "name": "function 13",
-        "func": "if ([\"table-list\", \"form-list\"].includes(msg.req.params.id)) {\n    msg.filename = \"./storage/tables/\" + msg.req.params.id + \".json\"\n    return [null, msg]\n} \n\nmsg.payload = ((global.get(\"TABLE\") || {})[msg.req.params.id] || {}).formData || {}\n\n// [\n//     { searchable: false, orderable: true, data: \"name\", title: \"name\", name: \"name\" },\n//     { searchable: true, orderable: false, data: \"position\", title: \"position\", name: \"position\" },\n//     { searchable: true, orderable: false, data: \"salary\", title: \"salary\", name: \"salary\"},\n//     { searchable: false, orderable: true, data: \"office\", title: \"office\", name: \"office\" }\n// ]\nreturn msg;",
+        "func": "if ([\"table-list\", \"form-list\"].includes(msg.req.params.tableSchemaId)) {\n    msg.filename = \"./storage/tables/\" + msg.req.params.tableSchemaId + \".json\"\n    return [null, msg]\n} \n\nmsg.payload = ((global.get(\"TABLE\") || {})[msg.req.params.tableSchemaId] || {}).formData || {}\n\nreturn msg;",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
+        "x": 530,
         "y": 340,
         "wires": [
             [
@@ -819,11 +867,11 @@
         "type": "http in",
         "z": "8c15d4882a1415d7",
         "name": "",
-        "url": "/table-options/:id",
+        "url": "/table-options/:tableSchemaId",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 230,
+        "x": 270,
         "y": 340,
         "wires": [
             [
@@ -838,7 +886,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 610,
+        "x": 690,
         "y": 320,
         "wires": []
     },
@@ -854,7 +902,7 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 620,
+        "x": 700,
         "y": 180,
         "wires": [
             [
@@ -874,7 +922,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 790,
+        "x": 870,
         "y": 180,
         "wires": [
             [
@@ -889,7 +937,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 950,
+        "x": 1030,
         "y": 180,
         "wires": []
     },
@@ -905,7 +953,7 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 620,
+        "x": 700,
         "y": 360,
         "wires": [
             [
@@ -925,7 +973,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 790,
+        "x": 870,
         "y": 360,
         "wires": [
             [
@@ -940,7 +988,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 950,
+        "x": 1030,
         "y": 360,
         "wires": []
     },
@@ -1042,5 +1090,53 @@
                 "f716d3d643799d83"
             ]
         ]
+    },
+    {
+        "id": "21894391227900c9",
+        "type": "http in",
+        "z": "7ef8b198cc85e2ec",
+        "name": "",
+        "url": "/table/:tableSchemaId",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 220,
+        "y": 220,
+        "wires": [
+            [
+                "e6ee5b5bb3db812f"
+            ]
+        ]
+    },
+    {
+        "id": "e6ee5b5bb3db812f",
+        "type": "function",
+        "z": "7ef8b198cc85e2ec",
+        "name": "function 20",
+        "func": "let id = msg.req.params.tableSchemaId\n\nlet dbData = global.get(\"TABLE\") || {}\ndelete dbData[id]\nglobal.set(\"TABLE\", dbData)\n\nmsg.payload = {}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "26c8493ff188a0d0"
+            ]
+        ]
+    },
+    {
+        "id": "26c8493ff188a0d0",
+        "type": "http response",
+        "z": "7ef8b198cc85e2ec",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 610,
+        "y": 220,
+        "wires": []
     }
 ]

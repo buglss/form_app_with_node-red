@@ -1,5 +1,22 @@
 (async function() {
-    const { formDataId, formData, formSchemaId, formSchema } = await getFormData()
+    const { formDataId, formData, formSchemaId, formSchema, remove } = await getFormData()
+
+    if(remove) {
+        fetch("/form/" + formSchemaId, {
+            method: 'DELETE'
+        })
+            .then(async response => {
+                if(response.ok) {
+                    console.log(true)
+                } else {
+                    console.log(false)
+                }
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        return 0
+    }
 
     const survey = new Survey.Model(formSchema)
     survey.data = formData

@@ -33,7 +33,7 @@
                 "data": "null",
                 "title": "null",
                 "name": "null",
-                "template": "<a href=\"#form-editor?formSchemaId={{id}}\" class=\"btn btn-sm btn-outline-secondary\">Şema Düzenle</a>\n<a href=\"#form?formSchemaId=form-options&formDataId={{id}}\" class=\"btn btn-sm btn-outline-secondary\">Ayar Düzenle</a>\n<a href=\"#form?formSchemaId={{id}}\" class=\"btn btn-sm btn-outline-secondary\">Aç</a>"
+                "template": "<a href=\"#form-editor?formSchemaId={{id}}\" class=\"btn btn-sm btn-outline-secondary\">Şema Düzenle</a>\n<a href=\"#form?formSchemaId=form-options&formDataId={{id}}\" class=\"btn btn-sm btn-outline-secondary\">Ayar Düzenle</a>\n<a href=\"#form?formSchemaId={{id}}\" class=\"btn btn-sm btn-outline-secondary\">Aç</a>\n<a href=\"#form?formSchemaId={{id}}&remove=true\" class=\"btn btn-sm btn-outline-secondary\">Sil</a>"
             }
         ],
         "name": "Form Listesi"

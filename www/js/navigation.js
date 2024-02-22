@@ -17,14 +17,34 @@
             const contentTitle = $("#contentTitle")
 
             if(base === "form") {
-                let formSchemaId = parameters.get("formSchemaId")
-                let formDataId = parameters.get("formDataId")
-                let formSchemaRes = await fetch("/form-schema/" + formSchemaId)
-                let formSchema = await formSchemaRes.json()
-                let formDataRes = await fetch("/form/" + formSchemaId + "/" + formDataId)
-                let formData = await formDataRes.json()
+                const formSchemaId = parameters.get("formSchemaId")
+                const formDataId = parameters.get("formDataId")
+                const remove = parameters.get("remove")
+                const formSchemaRes = await fetch("/form-schema/" + formSchemaId)
+                const formSchema = await formSchemaRes.json()
+                const formDataRes = await fetch("/form/" + formSchemaId + "/" + formDataId)
+                const formData = await formDataRes.json()
 
                 contentTitle.text("FORM")
+
+                if(remove) {
+                    fetch("/form/" + formSchemaId, {
+                        method: 'DELETE'
+                    })
+                        .then(async response => {
+                            contentContainer.html(`<div class="alert alert-success" role="alert">Silme işlemi başarıyla tamamlandı.</div>`)
+                            if(response.ok) {
+                                console.log(true)
+                            } else {
+                                console.log(false)
+                            }
+                        })
+                        .catch(error => {
+                            contentContainer.html(`<div class="alert alert-danger" role="alert">Silme işlemi başarısız oldu.</div>`)
+                            console.log(error)
+                        })
+                    return 0
+                }
 
                 let survey = new Survey.Model(formSchema)
                 survey.data = formData.formData
@@ -56,9 +76,9 @@
                     survey.render("surveyContainer")
                 }
             } else if(base === "form-editor") {
-                let formSchemaId = parameters.get("formSchemaId")
-                let formSchemaRes = await fetch("/form-schema/" + formSchemaId)
-                let formSchema = await formSchemaRes.json()
+                const formSchemaId = parameters.get("formSchemaId")
+                const formSchemaRes = await fetch("/form-schema/" + formSchemaId)
+                const formSchema = await formSchemaRes.json()
 
                 let creatorOptions = {
                     showLogicTab: true,
@@ -104,10 +124,30 @@
                 }
             } else if(base === "table") {
                 const tableSchemaId = parameters.get("tableSchemaId")
+                const remove = parameters.get("remove")
                 const tableSchemaRes = await fetch("/table-schema/" + tableSchemaId)
                 const tableSchema = await tableSchemaRes.json()
 
                 contentTitle.text("TABLE")
+
+                if(remove) {
+                    fetch("/table/" + tableSchemaId, {
+                        method: 'DELETE'
+                    })
+                        .then(async response => {
+                            contentContainer.html(`<div class="alert alert-success" role="alert">Silme işlemi başarıyla tamamlandı.</div>`)
+                            if(response.ok) {
+                                console.log(true)
+                            } else {
+                                console.log(false)
+                            }
+                        })
+                        .catch(error => {
+                            contentContainer.html(`<div class="alert alert-danger" role="alert">Silme işlemi başarısız oldu.</div>`)
+                            console.log(error)
+                        })
+                    return 0
+                }
 
                 const datatableContainerHTML = $(`<table />`, { id: "datatableContainer" })
                 contentContainer.html(datatableContainerHTML)
@@ -128,6 +168,7 @@
                     })
                 })
             } else {
+                contentTitle.text("Dashboard")
                 contentContainer.html("")
             }
         })
