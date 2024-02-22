@@ -1,5 +1,4 @@
 {
-    "id": "table-list",
     "formData": {
         "collection": "TABLE",
         "columns": [
@@ -34,11 +33,12 @@
                 "data": "null",
                 "title": "null",
                 "name": "null",
-                "template": "<a href=\"#form?formSchemaId=table-options&formDataId={{id}}\" class=\"btn btn-sm btn-outline-secondary\">Düzenle</a>"
+                "template": "<a href=\"#form?formSchemaId=table-options&formDataId={{id}}\" class=\"btn btn-sm btn-outline-secondary\">Düzenle</a>\n<a href=\"/#table?tableSchemaId={{id}}\" class=\"btn btn-sm btn-outline-secondary\">Aç</a>"
             }
         ],
         "name": "Tablo Listesi"
     },
     "formSchemaId": "table-options",
-    "formDataId": "table-list"
+    "formDataId": "table-list",
+    "id": "table-list"
 }
